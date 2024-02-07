@@ -1,0 +1,26 @@
+﻿@model List<Mascota>
+
+@section titulos {
+    <h1>Mascotas List</h1>
+}
+
+<table class="table table-warning">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Raza</th>
+            <th>Edad</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Mascota pet in @Model)
+        {
+            <tr>
+                <td>@pet.Nombre</td>
+                <td>@pet.Raza</td>
+                <td>@pet.Edad</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
