@@ -2,6 +2,12 @@
 
 <h1>Lista de hospitales</h1>
 
+<p>
+    <a asp-controller="Hospitales" asp-action="Create">
+        New hospital
+    </a>
+</p>
+
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -9,6 +15,7 @@
             <th>Dirección</th>
             <th>Teléfono</th>
             <th>Camas</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -19,6 +26,10 @@
                 <td>@h.Direccion</td>
                 <td>@h.Telefono</td>
                 <td>@h.Camas</td>
+                <td>
+                    @Html.ActionLink("Details", "Details","Hospitales"
+                    , new { idhospital = @h.IdHospital})
+                </td>
             </tr>
         }
     </tbody>
