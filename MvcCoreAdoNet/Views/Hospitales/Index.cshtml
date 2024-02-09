@@ -28,7 +28,11 @@
                 <td>@h.Camas</td>
                 <td>
                     @Html.ActionLink("Details", "Details","Hospitales"
-                    , new { idhospital = @h.IdHospital})
+                    , new { idhospital = h.IdHospital}) | 
+                    @Html.ActionLink("Edit", "Edit", "Hospitales"
+                    , new { idhospital = h.IdHospital}) | 
+                    @Html.ActionLink("Delete", "Index", "Hospitales"
+                    , new { eliminar = h.IdHospital})
                 </td>
             </tr>
         }

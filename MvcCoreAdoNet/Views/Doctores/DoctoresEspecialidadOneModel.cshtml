@@ -1,0 +1,38 @@
+﻿@model ModelDoctores
+
+<h1 style="color:blue">
+    Doctores Especialidad One Model
+</h1>
+
+<form method="post">
+    <label>Introduzca especialidad</label>
+    <select name="especialidad">
+        @foreach (string espe in Model.Especialidades)
+        {
+            <option>@espe</option>
+        }
+    </select>
+    <button class="btn btn-warning">
+        Filtrar doctores
+    </button>
+</form>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Apellido</th>
+            <th>Especialidad</th>
+            <th>Salario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Doctor doc in Model.Doctores)
+        {
+            <tr>
+                <td>@doc.Apellido</td>
+                <td>@doc.Especialidad</td>
+                <td>@doc.Salario</td>
+            </tr>
+        }
+    </tbody>
+</table>

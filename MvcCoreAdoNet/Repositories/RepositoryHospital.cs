@@ -110,5 +110,17 @@ namespace MvcCoreAdoNet.Repositories
             this.cn.Close();
             this.com.Parameters.Clear();
         }
+
+        public void DeleteHospital(int idhospital)
+        {
+            string sql = "delete from HOSPITAL where HOSPITAL_COD=@idhospital";
+            this.com.Parameters.AddWithValue("@idhospital", idhospital);
+            this.com.CommandType = CommandType.Text;
+            this.com.CommandText = sql;
+            this.cn.Open();
+            int af = this.com.ExecuteNonQuery();
+            this.cn.Close();
+            this.com.Parameters.Clear();
+        }
     }
 }

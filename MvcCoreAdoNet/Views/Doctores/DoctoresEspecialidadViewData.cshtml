@@ -1,0 +1,43 @@
+﻿@model List<Doctor>
+
+@{
+    List<string> especialidades = 
+        ViewData["ESPECIALIDADES"] as List<string>;
+}
+
+<h1 style="color:red">
+    Doctores Especialidad ViewData
+</h1>
+
+<form method="post">
+    <label>Introduzca especialidad</label>
+    <select name="especialidad">
+        @foreach (string espe in especialidades)
+        {
+            <option>@espe</option>
+        }
+    </select>
+    <button class="btn btn-warning">
+        Filtrar doctores
+    </button>
+</form>
+
+<table class="table table-warning">
+    <thead>
+        <tr>
+            <th>Apellido</th>
+            <th>Especialidad</th>
+            <th>Salario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Doctor doc in Model)
+        {
+            <tr>
+                <td>@doc.Apellido</td>
+                <td>@doc.Especialidad</td>
+                <td>@doc.Salario</td>
+            </tr>
+        }
+    </tbody>
+</table>
